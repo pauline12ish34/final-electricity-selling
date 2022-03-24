@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import react from "@vitejs/plugin-react";;
 
 import View from './components/viewDays/viewtransactions';
-import Purchase from './components/buy';
-import Navbar from './componets/Navbar';
-import Footer from './components/footer';
+import Buy from './components/buy';
+import Navbar from './components/Navbar';
+import Footer from './components/footer.jsx';
 import Home from './components/home';
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
      <h1>Hello world</h1>
       <Navbar/>
       <Home/>
-      <Purchase/>
-      <View/>
+      <Buy/>
+      {/* <View/> */}
       <Footer/>
 
     </div>

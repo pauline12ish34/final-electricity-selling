@@ -1,27 +1,32 @@
-version: '3.3'
+version: '3'
 services:
+  nginx:
+    image: palish12ish34/nginx
+    stdin_open: true
+    tty: true
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
   backend:
-    build:
-      context: backend/meterm-backend
-      dockerfile: Dockerfile
+    build: ./meterm-backend
     ports:
-        - '4008:4008'
-    
+      - 4008:4008
   frontend:
-    build:
-      context: frontend/cy-appp
-      dockerfile: Dockerfile
+    build: ./cy-appp
     ports:
-        - '3000:3000'
-    
+      - 3000:3000
+    environment:
+      DB_URL: mongodb+srv://pauline:p12ish34@cluster0.anzcs.mongodb.net/electricity
   db:
-    build:
-     context: mongodb
-     dockerfile: Dockerfile
-   
+    image: mongo:4.0-xenial
     ports:
-      - '27017:27017'
+      - 27017:27017
     volumes:
-      - ./data:/data/db
+      - electricity:/data/db
 volumes:
-    db:
+  electricity:
