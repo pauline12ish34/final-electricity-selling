@@ -20,7 +20,9 @@ import axios from 'axios';
       render() {
         return (
             <>
-           <div></div>
+           <div>
+               <h1>One transaction</h1>
+           </div>
             </>
         )}
     }
