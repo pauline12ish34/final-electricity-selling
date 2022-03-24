@@ -6,19 +6,19 @@ services:
       dockerfile: Dockerfile
     ports:
         - '4008:4008'
-    links:
-      - mongo 
+    
   frontend:
     build:
-      context: frontend/electricity-front
+      context: frontend/cy-appp
       dockerfile: Dockerfile
     ports:
         - '3000:3000'
-    links : 
-     - backend
+    
   db:
-    image: mongo
-    restart: always
+    build:
+     context: mongodb
+     dockerfile: Dockerfile
+   
     ports:
       - '27017:27017'
     volumes:
