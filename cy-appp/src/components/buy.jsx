@@ -21,7 +21,7 @@ import axios from 'axios';
       money: this.state.money
     };
 
-    axios.post(`http://localhost:4008`, { transactionSchema })
+    axios.post(`http://localhost:4008/elect/api/tokens/purchase`, { transactionSchema })
       .then(res => {
         console.log(res);
         console.log(res.data);

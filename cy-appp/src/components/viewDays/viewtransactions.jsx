@@ -10,7 +10,7 @@ import axios from 'axios';
       }
     
       componentDidMount() {
-        axios.get("http://localhost:4008/api/tokens")
+        axios.get("http://localhost:4008/elect/api/tokens")
           .then(res => {
             const transactions = res.data;
             this.setState({ transactions });
