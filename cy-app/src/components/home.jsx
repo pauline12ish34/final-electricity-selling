@@ -11,12 +11,12 @@ return(
   </div>
 
   <div className="pt-5">
-    <div className='mt-96 -mb-8 ml-14 '>
-  <button className="text-3xl text-white bg-green h-14 w-64 -mt-23 rounded-3xl">GET Started</button>
+    <div className='mt-96 mb-3 ml-14  '>
+  <button className="border border-gray-100 text-3xl text-white bg-green h-14 w-64  rounded-3xl">GET Started</button>
   </div>
   </div>
   <div className="pt-5 mt-8">
-  <img src="./watt.jpg" alt="pauline's meter" className='ml-20'/>
+  <img src="watt.jpg" alt="pauline's meter" className='ml-20'/>
   </div>
  </div>
 

@@ -53,7 +53,7 @@ import axios from 'axios';
   }
 
 return(
-  <div>
+  <div className="justify-center w-full ml-20">
 
   <h1>Buy Electricity</h1>
 
@@ -78,9 +78,10 @@ return(
 
     {({ errors, touched }) => (
 
-      <Form className="border-black m-20">
+      <Form className="border-black m-20 space-y-6 ">
+        
 
-        <Field name="meter" placeholder="meter number" className= "border-black"/>
+        <Field name="meter" placeholder="meter number" className= "gap-y-2 border-2 border-gray-600 block"/>
 
         {errors.meter && touched.meter ? (
 
@@ -88,7 +89,7 @@ return(
 
         ) : null}
 
-        <Field name="money" className= "border-black"/>
+        <Field name="money" placeholder="money" className= "gap-y-2 border-2  border-gray-600  block"/>
 
         {errors.money && touched.money ? (
 
@@ -98,7 +99,7 @@ return(
 
        
 
-        <button type="submit" className='bg-black text-white'>Submit</button>
+        <button type="submit" className='bg-black text-white border8 rounded-2xl h-16 w-40'>Submit</button>
 
       </Form>
 
