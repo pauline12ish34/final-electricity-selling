@@ -19,11 +19,13 @@ services:
     links:
       - db
   frontend:
-    build: ./cy-appp
+    build: ./cy-app
     ports:
       - 3000:3000
   db:
-    image: mongo:4.0-xenial
+    build:
+        context: ./mongodb
+        dockerfile: Dockerfile
     ports:
       - 27017:27017
     volumes:
