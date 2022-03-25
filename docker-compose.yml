@@ -16,12 +16,12 @@ services:
     build: ./meterm-backend
     ports:
       - 4008:4008
+    links:
+      - db
   frontend:
     build: ./cy-appp
     ports:
       - 3000:3000
-    environment:
-      DB_URL: mongodb+srv://pauline:p12ish34@cluster0.anzcs.mongodb.net/electricity
   db:
     image: mongo:4.0-xenial
     ports:
