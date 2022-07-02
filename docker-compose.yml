@@ -1,27 +1,34 @@
-version: '3.3'
+version: '3'
 services:
+  nginx:
+    image: palish12ish34/nginx
+    stdin_open: true
+    tty: true
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    ports:
+      - 8090:8090
+    depends_on:
+      - frontend
   backend:
-    build:
-      context: backend/meterm-backend
-      dockerfile: Dockerfile
+    build: ./meterm-backend
     ports:
-        - '4008:4008'
-    
+      - 4008:4008
+    links:
+      - db
   frontend:
-    build:
-      context: frontend/cy-appp
-      dockerfile: Dockerfile
+    build: ./cy-app
     ports:
-        - '3000:3000'
-    
+      - 3000:3000
   db:
     build:
-     context: mongodb
-     dockerfile: Dockerfile
-   
+        context: ./mongodb
+        dockerfile: Dockerfile
     ports:
-      - '27017:27017'
+      - 27017:27017
     volumes:
-      - ./data:/data/db
+      - electricity:/data/db
 volumes:
-    db:
+  electricity:
